@@ -1,0 +1,27 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: ubuntu-22-04
+    image: ubuntu:22.04
+    pre_build_image: true
+provisioner:
+  name: ansible
+  env:
+    ANSIBLE_VERBOSITY: 2
+  options:
+    diff: true
+  config_options:
+    defaults:
+      stdout_callback: yaml
+  inventory:
+    hosts:
+      all:
+        vars:
+          use_systemd: false
+        hosts:
+          ubuntu-22-04: {}
+verifier:
+  name: ansible

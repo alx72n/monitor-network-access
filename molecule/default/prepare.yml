@@ -1,0 +1,23 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Update repositories
+      ansible.builtin.raw: apt-get update
+      changed_when: false
+
+    - name: Install python
+      ansible.builtin.raw: >
+        apt-get install
+        --yes
+        --no-install-recommends
+        python3
+      changed_when: false
+
+    #  This package is needed to determine ansible_default_ipv4 variable in
+    #  docker container.
+    - name: Install iproute2
+      ansible.builtin.package:
+        name: iproute2
+        state: present
