@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  role_name: monitor_network_access
+  namespace: alx72n
+  author: Alexander Taran
+  description: Monitor network access
+  license: Apache License, Version 2.0
+  min_ansible_version: 2.14.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - jammy
