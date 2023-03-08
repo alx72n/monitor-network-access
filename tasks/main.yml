@@ -1,0 +1,4 @@
+---
+- name: Setup monitoring of network access
+  ansible.builtin.debug:
+    msg: Setup monitoring of network access
