@@ -1,0 +1,7 @@
+---
+- name: Setup monitoring of network access
+  hosts: all
+  tasks:
+    - name: Setup monitoring of network access
+      ansible.builtin.debug:
+        msg: Setup monitoring of network access
