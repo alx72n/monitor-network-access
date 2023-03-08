@@ -3,5 +3,5 @@
   hosts: all
   tasks:
     - name: Setup monitoring of network access
-      ansible.builtin.debug:
-        msg: Setup monitoring of network access
+      ansible.builtin.include_role:
+        name: "{{ playbook_dir }}"
